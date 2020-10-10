@@ -15,7 +15,7 @@ class MovieCard extends Component {
     };
 
     componentDidMount() {
-        axios.get(`http://www.omdbapi.com/?apikey=d30e4bc9&i=${this.props.movieID}&plot=full`)
+        axios.get(`http://www.omdbapi.com/?apikey=d30e4bc9&i=${this.props.movieID}`)
         .then(res => res.data)
         .then(res => {
             this.setState({ movieData: res})
@@ -26,7 +26,6 @@ class MovieCard extends Component {
         const {
             Title,
             Released,
-            Genre,
             Plot,
             Poster,
             imdbRating
@@ -48,12 +47,6 @@ class MovieCard extends Component {
                     </div>
                     <h4>Rating: {imdbRating} / 10</h4>
                     <p>{Plot && Plot.substr(0, 350)}</p>
-                    <div className="tags-container">
-                        {Genre &&
-                            Genre.split(', ').map(g => (
-                                <span key={g}>{g}</span>
-                            ))}
-                    </div>
                 </div>
             </div>
         );

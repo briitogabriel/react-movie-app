@@ -41,11 +41,11 @@ class MovieList extends Component {
                         (movieList.map(movie => 
                             (<MovieCard movieID={movie} key={movie} />))
                     ) : (
-                        <p>Couldn't find any movie. Please search again using another search criteria.</p>)
+                        <p>Couldn't find any movie. Please search again.</p>)
                 }
             </div>
         )
     }
 }
 
-export default MovieList
+export default MovieList;
