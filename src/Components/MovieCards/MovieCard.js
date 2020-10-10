@@ -15,7 +15,7 @@ class MovieCard extends Component {
     };
 
     componentDidMount() {
-        axios.get(`http://www.omdbapi.com/?apikey=d30e4bc9&i=${this.props.movieID}`)
+        axios.get(`https://www.omdbapi.com/?apikey=d30e4bc9&i=${this.props.movieID}`)
         .then(res => res.data)
         .then(res => {
             this.setState({ movieData: res})
