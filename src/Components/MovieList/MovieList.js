@@ -37,9 +37,11 @@ class MovieList extends Component {
                 </form>
 
                 {
-                    movieList.length > 0 
-                    ? (movieList.map(movie => (<MovieCard movieID={movie} key={movie} />)))
-                    : (<p>Couldn't find any movie. Please search again using another search criteria.</p>)
+                    movieList.length > 0 ?
+                        (movieList.map(movie => 
+                            (<MovieCard movieID={movie} key={movie} />))
+                    ) : (
+                        <p>Couldn't find any movie. Please search again using another search criteria.</p>)
                 }
             </div>
         )
